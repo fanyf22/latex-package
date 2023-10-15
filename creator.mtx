@@ -1,0 +1,116 @@
+# creator.mtx
+# written in matex2.0 language
+
+VERSION 2
+
+# packages
+PAC geometry    OPTION margin=1in
+PAC enumitem    OPTION inline
+PAC ulem        OPTION normalem
+PAC color, caption, graphicx, subfigure
+PAC hyperref    OPTION pdfstartview=FitH, CJKbookmarks=true, bookmarksnumbered=true, bookmarksopen=true, colorlinks, linkcolor=blue, anchorcolor=blue, citecolor=blue
+PAC amsmath, amssymb, amsthm, amsfonts, mathrsfs, extarrows, bbm, bm, commutative-diagrams, quiver, cleveref
+PAC old-arrows  OPTION new
+
+# equation setting
+RAW \linespread{1.6}
+RAW \addtolength{\jot}{0.5em}
+DEF \arraystretch   TO BE 0.6
+
+# symbols
+DEF \what#1     TO BE \widehat{#1}
+DEF \dhat#1     TO BE \widehat{\widehat{#1}}
+DEF \pprod      TO BE \sideset{}{^\prime}\prod
+RAW \DeclareMathOperator{\hatoplus}{\hat\oplus}
+
+# letters
+FOR x IN ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    DEF \%x%        TO BE \mathbb{%x%}
+    DEF \%x%%x%     TO BE \mathscr{%x%}
+    DEF \%x%%x%%x%  TO BE \mathfrak{%x%}
+END FOR
+FOR x IN abcdefghijklmnopqrstuvwxyz
+    DEF \%x%        TO BE \mathcal{%x.upper()%}
+    DEF \%x%%x%%x%  TO BE \mathfrak{%x%}
+END FOR
+
+# operator styles
+DEF \opnormal#1     TO BE \operatorname{#1}
+DEF \opitalic#1     TO BE \opnormal{\mathnormal{#1}}
+DEF \opcursive#1    TO BE \opitalic{\mathcal#1}
+DEF \oplinear#1     TO BE \opnormal{\mathbb{#1}}
+
+# linear groups
+DEF \GL     TO BE \oplinear{GL}
+DEF \SL     TO BE \oplinear{SL}
+DEF \SO     TO BE \oplinear{SO}
+DEF \SU     TO BE \oplinear{SU}
+DEF \PGL    TO BE \oplinear{PGL}
+DEF \PSL    TO BE \oplinear{PSL}
+DEF \U      TO BE \oplinear{U}
+
+# operators
+DEF \adj    TO BE \opnormal{adj}
+DEF \Alt    TO BE \opcursive{Alt}
+DEF \Aut    TO BE \opcursive{Aut}
+DEF \Ann    TO BE \opcursive{Ann}
+DEF \Br     TO BE \opcursive{Br}
+DEF \Cl     TO BE \opcursive{Cl}
+DEF \Cor    TO BE \opcursive{Cor}
+DEF \char   TO BE \opnormal{char}
+DEF \coim   TO BE \opnormal{coim}
+DEF \coker  TO BE \opnormal{coker}
+DEF \diag   TO BE \opnormal{diag}
+DEF \Div    TO BE \opcursive{Div}
+DEF \End    TO BE \opcursive{End}
+DEF \Ext    TO BE \opcursive{Ext}
+DEF \Frac   TO BE \opcursive{Frac}
+DEF \Gal    TO BE \opcursive{Gal}
+DEF \Hom    TO BE \opcursive{Hom}
+DEF \id     TO BE \opnormal{id}
+DEF \im     TO BE \opnormal{im}
+DEF \inv    TO BE \opnormal{inv}
+DEF \Im     TO BE \opnormal{Im}
+DEF \Inf    TO BE \opcursive{Inf}
+DEF \Irr    TO BE \opcursive{Irr}
+DEF \Mor    TO BE \opcursive{Mor}
+DEF \Nm     TO BE \opcursive{N}
+DEF \ord    TO BE \opnormal{ord}
+DEF \Orb    TO BE \opcursive{Orb}
+DEF \rad    TO BE \opnormal{rad}
+DEF \rank   TO BE \opnormal{rank}
+DEF \Re     TO BE \opnormal{Re}
+DEF \Res    TO BE \opnormal{Res}
+DEF \Stab   TO BE \opcursive{Stab}
+DEF \Spec   TO BE \opcursive{Spec}
+DEF \Sym    TO BE \opcursive{Sym}
+DEF \sign   TO BE \opnormal{sign}
+DEF \Tr     TO BE \opcursive{Tr}
+DEF \Tor    TO BE \opcursive{Tor}
+DEF \vol    TO BE \opnormal{vol}
+
+# environments
+THM pp      NAME %upperlower('Proposition')%    UNDER chapter   STYLE plain
+THM thm     COUNTER pp  NAME %upperlower('Theorem')%            STYLE plain
+THM lem     COUNTER pp  NAME %upperlower('Lemma')%              STYLE plain
+THM cor     COUNTER pp  NAME %upperlower('Corollary')%          STYLE plain
+THM def     COUNTER pp  NAME %upperlower('Definition')%         STYLE definition
+THM rmk     COUNTER pp  NAME %upperlower('Remark')%             STYLE definition
+THM eg      COUNTER pp  NAME %upperlower('Example')%            STYLE definition
+THM ex      COUNTER pp  NAME %upperlower('Exercise')%           STYLE plain
+THM problem NAME %upperlower('Problem')%    STYLE plain
+THM anwer   NAME %upperlower('Answer')%     STYLE definition
+RAW \theoremstyle{plain}\newtheorem*{nota}
+<?python
+def cref(x, y):
+    echo(r'\crefname{{{0}}}{{{1}}}{{{1}}}'.format(x, upperlower(y)))
+cref('pp', 'Proposition')
+cref('thm', 'Theorem')
+cref('lem', 'Lemma')
+cref('cor', 'Corollary')
+cref('def', 'Definition')
+cref('rmk', 'Remark')
+cref('eg', 'Example')
+cref('ex', 'Exercise')
+?>
+
