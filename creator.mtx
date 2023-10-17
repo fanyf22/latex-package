@@ -21,6 +21,7 @@ DEF \arraystretch   TO BE 0.6
 DEF \what#1     TO BE \widehat{#1}
 DEF \dhat#1     TO BE \widehat{\widehat{#1}}
 DEF \pprod      TO BE \sideset{}{^\prime}\prod
+DEF \dis$#1$    TO BE $\displaystyle{#1}$
 RAW \DeclareMathOperator{\hatoplus}{\hat\oplus}
 
 # letters
@@ -55,9 +56,9 @@ DEF \Alt    TO BE \opcursive{Alt}
 DEF \Aut    TO BE \opcursive{Aut}
 DEF \Ann    TO BE \opcursive{Ann}
 DEF \Br     TO BE \opcursive{Br}
+DEF \Char   TO BE \opnormal{char}
 DEF \Cl     TO BE \opcursive{Cl}
 DEF \Cor    TO BE \opcursive{Cor}
-DEF \char   TO BE \opnormal{char}
 DEF \coim   TO BE \opnormal{coim}
 DEF \coker  TO BE \opnormal{coker}
 DEF \diag   TO BE \opnormal{diag}
@@ -90,27 +91,27 @@ DEF \Tor    TO BE \opcursive{Tor}
 DEF \vol    TO BE \opnormal{vol}
 
 # environments
-THM pp      NAME %upperlower('Proposition')%    UNDER chapter   STYLE plain
-THM thm     COUNTER pp  NAME %upperlower('Theorem')%            STYLE plain
-THM lem     COUNTER pp  NAME %upperlower('Lemma')%              STYLE plain
-THM cor     COUNTER pp  NAME %upperlower('Corollary')%          STYLE plain
-THM def     COUNTER pp  NAME %upperlower('Definition')%         STYLE definition
-THM rmk     COUNTER pp  NAME %upperlower('Remark')%             STYLE definition
-THM eg      COUNTER pp  NAME %upperlower('Example')%            STYLE definition
-THM ex      COUNTER pp  NAME %upperlower('Exercise')%           STYLE plain
-THM problem NAME %upperlower('Problem')%    STYLE plain
-THM anwer   NAME %upperlower('Answer')%     STYLE definition
-RAW \theoremstyle{plain}\newtheorem*{nota}
+THM proposition     NAME %upperlower('Proposition')%    UNDER chapter   STYLE plain
+THM theorem         COUNTER proposition     NAME %upperlower('Theorem')%            STYLE plain
+THM lemma           COUNTER proposition     NAME %upperlower('Lemma')%              STYLE plain
+THM corollary       COUNTER proposition     NAME %upperlower('Corollary')%          STYLE plain
+THM definition      COUNTER proposition     NAME %upperlower('Definition')%         STYLE definition
+THM remark          COUNTER proposition     NAME %upperlower('Remark')%             STYLE definition
+THM example         COUNTER proposition     NAME %upperlower('Example')%            STYLE definition
+THM exercise        COUNTER proposition     NAME %upperlower('Exercise')%           STYLE plain
+THM problem         NAME %upperlower('Problem')%    STYLE plain
+THM anwer           NAME %upperlower('Answer')%     STYLE definition
+RAW \theoremstyle{plain}\newtheorem*{notation}{N\footnotesize OTATION\normalsize }
 <?python
 def cref(x, y):
     echo(r'\crefname{{{0}}}{{{1}}}{{{1}}}'.format(x, upperlower(y)))
-cref('pp', 'Proposition')
-cref('thm', 'Theorem')
-cref('lem', 'Lemma')
-cref('cor', 'Corollary')
-cref('def', 'Definition')
-cref('rmk', 'Remark')
-cref('eg', 'Example')
-cref('ex', 'Exercise')
+cref('proposition', 'Proposition')
+cref('theorem', 'Theorem')
+cref('lemma', 'Lemma')
+cref('corollary', 'Corollary')
+cref('definition', 'Definition')
+cref('remark', 'Remark')
+cref('example', 'Example')
+cref('exercise', 'Exercise')
 ?>
 
