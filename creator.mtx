@@ -61,6 +61,7 @@ DEF \Cor    @BE \opcursive{Cor}
 DEF \coim   @BE \opnormal{coim}
 DEF \coker  @BE \opnormal{coker}
 DEF \diag   @BE \opnormal{diag}
+DEF \diam   @BE \opnormal{diam}
 DEF \Div    @BE \opcursive{Div}
 DEF \End    @BE \opcursive{End}
 DEF \Ext    @BE \opcursive{Ext}
@@ -80,7 +81,7 @@ DEF \Orb    @BE \opcursive{Orb}
 DEF \rad    @BE \opnormal{rad}
 DEF \rank   @BE \opnormal{rank}
 DEF \Re     @BE \opnormal{Re}
-DEF \Res    @BE \opnormal{Res}
+DEF \Res    @BE \opcursive{Res}
 DEF \Stab   @BE \opcursive{Stab}
 DEF \Spec   @BE \opcursive{Spec}
 DEF \Sym    @BE \opcursive{Sym}
@@ -116,6 +117,3 @@ cref('example', 'Example')
 cref('exercise', 'Exercise')
 ?>
 
-# options
-OPT section     @BE \SetTheoremNumberingPrefix{\thesection}
-OPT chapter     @BE \SetTheoremNumberingPrefix{\thechapter}
