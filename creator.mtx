@@ -1,107 +1,108 @@
 # creator.mtx
-# written in matex2.0 language
 
-VERSION 2
+PACKAGE creator
 
 # packages
-PAC geometry    OPTION margin=1in
-PAC enumitem    OPTION inline
-PAC ulem        OPTION normalem
-PAC color, caption, graphicx, subfigure
-PAC hyperref    OPTION pdfstartview=FitH, CJKbookmarks=true, bookmarksnumbered=true, bookmarksopen=true, colorlinks, linkcolor=blue, anchorcolor=blue, citecolor=blue
-PAC amsmath, amssymb, amsthm, amsfonts, mathrsfs, extarrows, bbm, bm, commutative-diagrams, quiver, cleveref
-PAC old-arrows  OPTION new
+PAK geometry    @OPTION margin=1in
+PAK enumitem    @OPTION inline
+PAK ulem        @OPTION normalem
+PAK color, caption, graphicx, subfigure
+PAK hyperref    @OPTION pdfstartview=FitH, CJKbookmarks=true, bookmarksnumbered=true, bookmarksopen=true, colorlinks, linkcolor=blue, anchorcolor=blue, citecolor=blue
+PAK amsmath, amssymb, amsthm, amsfonts, mathrsfs, extarrows, bbm, bm, commutative-diagrams, quiver, cleveref
+PAK old-arrows  @OPTION new
 
 # equation setting
 RAW \linespread{1.6}
 RAW \addtolength{\jot}{0.5em}
-DEF \arraystretch   TO BE 0.6
+DEF \arraystretch   @BE 0.6
 
 # symbols
-DEF \what#1     TO BE \widehat{#1}
-DEF \dhat#1     TO BE \widehat{\widehat{#1}}
-DEF \pprod      TO BE \sideset{}{^\prime}\prod
-DEF \dis$#1$    TO BE $\displaystyle{#1}$
+DEF \what#1     @BE \widehat{#1}
+DEF \dhat#1     @BE \widehat{\widehat{#1}}
+DEF \pprod      @BE \sideset{}{^\prime}\prod
+DEF \dis$#1$    @BE $\displaystyle{#1}$
 RAW \DeclareMathOperator{\hatoplus}{\hat\oplus}
 
 # letters
-FOR x IN ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    DEF \%x%        TO BE \mathbb{%x%}
-    DEF \%x%%x%     TO BE \mathscr{%x%}
-    DEF \%x%%x%%x%  TO BE \mathfrak{%x%}
+FOR x @IN ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    DEF \%x%        @BE \mathbb{%x%}
+    DEF \%x%%x%     @BE \mathscr{%x%}
+    DEF \%x%%x%%x%  @BE \mathfrak{%x%}
 END FOR
-FOR x IN abcdefghijklmnopqrstuvwxyz
-    DEF \%x%        TO BE \mathcal{%x.upper()%}
-    DEF \%x%%x%%x%  TO BE \mathfrak{%x%}
+FOR x @IN abcdefghijklmnopqrstuvwxyz
+    DEF \%x%        @BE \mathcal{%x.upper()%}
+    DEF \%x%%x%%x%  @BE \mathfrak{%x%}
 END FOR
 
 # operator styles
-DEF \opnormal#1     TO BE \operatorname{#1}
-DEF \opitalic#1     TO BE \opnormal{\mathnormal{#1}}
-DEF \opcursive#1    TO BE \opitalic{\mathcal#1}
-DEF \oplinear#1     TO BE \opnormal{\mathbb{#1}}
+DEF \opnormal#1     @BE \operatorname{#1}
+DEF \opitalic#1     @BE \opnormal{\mathnormal{#1}}
+DEF \opcursive#1    @BE \opitalic{\mathcal#1}
+DEF \oplinear#1     @BE \opnormal{\mathbb{#1}}
 
 # linear groups
-DEF \GL     TO BE \oplinear{GL}
-DEF \SL     TO BE \oplinear{SL}
-DEF \SO     TO BE \oplinear{SO}
-DEF \SU     TO BE \oplinear{SU}
-DEF \PGL    TO BE \oplinear{PGL}
-DEF \PSL    TO BE \oplinear{PSL}
-DEF \U      TO BE \oplinear{U}
+DEF \GL     @BE \oplinear{GL}
+DEF \SL     @BE \oplinear{SL}
+DEF \SO     @BE \oplinear{SO}
+DEF \SU     @BE \oplinear{SU}
+DEF \PGL    @BE \oplinear{PGL}
+DEF \PSL    @BE \oplinear{PSL}
+DEF \U      @BE \oplinear{U}
 
 # operators
-DEF \adj    TO BE \opnormal{adj}
-DEF \Alt    TO BE \opcursive{Alt}
-DEF \Aut    TO BE \opcursive{Aut}
-DEF \Ann    TO BE \opcursive{Ann}
-DEF \Br     TO BE \opcursive{Br}
-DEF \Char   TO BE \opnormal{char}
-DEF \Cl     TO BE \opcursive{Cl}
-DEF \Cor    TO BE \opcursive{Cor}
-DEF \coim   TO BE \opnormal{coim}
-DEF \coker  TO BE \opnormal{coker}
-DEF \diag   TO BE \opnormal{diag}
-DEF \Div    TO BE \opcursive{Div}
-DEF \End    TO BE \opcursive{End}
-DEF \Ext    TO BE \opcursive{Ext}
-DEF \Frac   TO BE \opcursive{Frac}
-DEF \Gal    TO BE \opcursive{Gal}
-DEF \Hom    TO BE \opcursive{Hom}
-DEF \id     TO BE \opnormal{id}
-DEF \im     TO BE \opnormal{im}
-DEF \inv    TO BE \opnormal{inv}
-DEF \Im     TO BE \opnormal{Im}
-DEF \Inf    TO BE \opcursive{Inf}
-DEF \Irr    TO BE \opcursive{Irr}
-DEF \Mor    TO BE \opcursive{Mor}
-DEF \Nm     TO BE \opcursive{N}
-DEF \ord    TO BE \opnormal{ord}
-DEF \Orb    TO BE \opcursive{Orb}
-DEF \rad    TO BE \opnormal{rad}
-DEF \rank   TO BE \opnormal{rank}
-DEF \Re     TO BE \opnormal{Re}
-DEF \Res    TO BE \opnormal{Res}
-DEF \Stab   TO BE \opcursive{Stab}
-DEF \Spec   TO BE \opcursive{Spec}
-DEF \Sym    TO BE \opcursive{Sym}
-DEF \sign   TO BE \opnormal{sign}
-DEF \Tr     TO BE \opcursive{Tr}
-DEF \Tor    TO BE \opcursive{Tor}
-DEF \vol    TO BE \opnormal{vol}
+DEF \adj    @BE \opnormal{adj}
+DEF \Alt    @BE \opcursive{Alt}
+DEF \Aut    @BE \opcursive{Aut}
+DEF \Ann    @BE \opcursive{Ann}
+DEF \Br     @BE \opcursive{Br}
+DEF \Char   @BE \opnormal{char}
+DEF \Cl     @BE \opcursive{Cl}
+DEF \Cor    @BE \opcursive{Cor}
+DEF \coim   @BE \opnormal{coim}
+DEF \coker  @BE \opnormal{coker}
+DEF \diag   @BE \opnormal{diag}
+DEF \Div    @BE \opcursive{Div}
+DEF \End    @BE \opcursive{End}
+DEF \Ext    @BE \opcursive{Ext}
+DEF \Frac   @BE \opcursive{Frac}
+DEF \Gal    @BE \opcursive{Gal}
+DEF \Hom    @BE \opcursive{Hom}
+DEF \id     @BE \opnormal{id}
+DEF \im     @BE \opnormal{im}
+DEF \inv    @BE \opnormal{inv}
+DEF \Im     @BE \opnormal{Im}
+DEF \Inf    @BE \opcursive{Inf}
+DEF \Irr    @BE \opcursive{Irr}
+DEF \Mor    @BE \opcursive{Mor}
+DEF \Nm     @BE \opcursive{N}
+DEF \ord    @BE \opnormal{ord}
+DEF \Orb    @BE \opcursive{Orb}
+DEF \rad    @BE \opnormal{rad}
+DEF \rank   @BE \opnormal{rank}
+DEF \Re     @BE \opnormal{Re}
+DEF \Res    @BE \opnormal{Res}
+DEF \Stab   @BE \opcursive{Stab}
+DEF \Spec   @BE \opcursive{Spec}
+DEF \Sym    @BE \opcursive{Sym}
+DEF \sign   @BE \opnormal{sign}
+DEF \Tr     @BE \opcursive{Tr}
+DEF \Tor    @BE \opcursive{Tor}
+DEF \vol    @BE \opnormal{vol}
 
 # environments
-THM proposition     NAME %upperlower('Proposition')%    UNDER chapter   STYLE plain
-THM theorem         COUNTER proposition     NAME %upperlower('Theorem')%            STYLE plain
-THM lemma           COUNTER proposition     NAME %upperlower('Lemma')%              STYLE plain
-THM corollary       COUNTER proposition     NAME %upperlower('Corollary')%          STYLE plain
-THM definition      COUNTER proposition     NAME %upperlower('Definition')%         STYLE definition
-THM remark          COUNTER proposition     NAME %upperlower('Remark')%             STYLE definition
-THM example         COUNTER proposition     NAME %upperlower('Example')%            STYLE definition
-THM exercise        COUNTER proposition     NAME %upperlower('Exercise')%           STYLE plain
-THM problem         NAME %upperlower('Problem')%    STYLE plain
-THM anwer           NAME %upperlower('Answer')%     STYLE definition
-RAW \theoremstyle{plain}\newtheorem*{notation}{N\footnotesize OTATION\normalsize }
+CNT counter@thms
+CMD \SetTheoremNumberingPrefix  @BE %make_counter_under('counter@thms', '#1')%  @LEN 1
+THM proposition     @BE %upperlower('Proposition')%     @COUNTER counter@thms   @STYLE plain
+THM theorem         @BE %upperlower('Theorem')%         @COUNTER counter@thms   @STLYE plain
+THM lemma           @BE %upperlower('Lemma')%           @COUNTER counter@thms   @STLYE plain
+THM corollary       @BE %upperlower('Corollary')%       @COUNTER counter@thms   @STYLE plain
+THM definition      @BE %upperlower('Definition')%      @COUNTER counter@thms   @STYLE definition
+THM remark          @BE %upperlower('Remark')%          @COUNTER counter@thms   @STYLE definition
+THM example         @BE %upperlower('Example')%         @COUNTER counter@thms   @STYLE definition
+THM exercise        @BE %upperlower('Exercise')%        @COUNTER counter@thms   @STYLE plain
+THM notation        @BE %upperlower('Notation')%        @WITHOUT_COUNTER
+THM problem     @BE %upperlower('Problem')%     @STYLE plain
+THM answer      @BE %upperlower('Answer')%      @STYLE definition
 <?python
 def cref(x, y):
     echo(r'\crefname{{{0}}}{{{1}}}{{{1}}}'.format(x, upperlower(y)))
@@ -115,3 +116,6 @@ cref('example', 'Example')
 cref('exercise', 'Exercise')
 ?>
 
+# options
+OPT section     @BE \SetTheoremNumberingPrefix{\thesection}
+OPT chapter     @BE \SetTheoremNumberingPrefix{\thechapter}
