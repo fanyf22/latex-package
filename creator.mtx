@@ -90,11 +90,11 @@ DEF \Tor    @BE \opcursive{Tor}
 DEF \vol    @BE \opnormal{vol}
 
 # environments
-CNT counter@thms
+CTR counter@thms
 CMD \SetTheoremNumberingPrefix  @BE %make_counter_under('counter@thms', '#1')%  @LEN 1
 THM proposition     @BE %upperlower('Proposition')%     @COUNTER counter@thms   @STYLE plain
-THM theorem         @BE %upperlower('Theorem')%         @COUNTER counter@thms   @STLYE plain
-THM lemma           @BE %upperlower('Lemma')%           @COUNTER counter@thms   @STLYE plain
+THM theorem         @BE %upperlower('Theorem')%         @COUNTER counter@thms   @STYLE plain
+THM lemma           @BE %upperlower('Lemma')%           @COUNTER counter@thms   @STYLE plain
 THM corollary       @BE %upperlower('Corollary')%       @COUNTER counter@thms   @STYLE plain
 THM definition      @BE %upperlower('Definition')%      @COUNTER counter@thms   @STYLE definition
 THM remark          @BE %upperlower('Remark')%          @COUNTER counter@thms   @STYLE definition
