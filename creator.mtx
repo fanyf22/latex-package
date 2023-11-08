@@ -8,7 +8,7 @@ PAK enumitem    @OPTION inline
 PAK ulem        @OPTION normalem
 PAK color, caption, graphicx, subfigure
 PAK hyperref    @OPTION pdfstartview=FitH, CJKbookmarks=true, bookmarksnumbered=true, bookmarksopen=true, colorlinks, linkcolor=blue, anchorcolor=blue, citecolor=blue
-PAK amsmath, amssymb, amsthm, amsfonts, mathrsfs, extarrows, bbm, bm, commutative-diagrams, quiver, cleveref
+PAK amsmath, amssymb, amsthm, amsfonts, mathrsfs, extarrows, bbm, bm, commutative-diagrams, quiver, cleveref, units
 PAK old-arrows  @OPTION new
 
 # equation setting
