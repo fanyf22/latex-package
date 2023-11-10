@@ -17,82 +17,82 @@ RAW \addtolength{\jot}{0.5em}
 DEF \arraystretch   @BE 0.6
 
 # symbols
-DEF \what#1     @BE \widehat{#1}
-DEF \dhat#1     @BE \widehat{\widehat{#1}}
-DEF \pprod      @BE \sideset{}{^\prime}\prod
-DEF \dis$#1$    @BE $\displaystyle{#1}$
+CMD \what   @LEN 1  @BE \widehat{#1}
+CMD \dhat   @LEN 1  @BE \widehat{\widehat{#1}}
+CMD \pprod          @BE \sideset{}{^\prime}\prod
+DEF \dis$#1$        @BE $\displaystyle{#1}$
 RAW \DeclareMathOperator{\hatoplus}{\hat\oplus}
 
 # letters
 FOR x @IN ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    DEF \%x%        @BE \mathbb{%x%}
-    DEF \%x%%x%     @BE \mathscr{%x%}
-    DEF \%x%%x%%x%  @BE \mathfrak{%x%}
+    CMD \%x%        @BE \mathbb{%x%}
+    CMD \%x%%x%     @BE \mathscr{%x%}
+    CMD \%x%%x%%x%  @BE \mathfrak{%x%}
 END FOR
 FOR x @IN abcdefghijklmnopqrstuvwxyz
-    DEF \%x%        @BE \mathcal{%x.upper()%}
-    DEF \%x%%x%%x%  @BE \mathfrak{%x%}
+    CMD \%x%        @BE \mathcal{%x.upper()%}
+    CMD \%x%%x%%x%  @BE \mathfrak{%x%}
 END FOR
 
 # operator styles
-DEF \opnormal#1     @BE \operatorname{#1}
-DEF \opitalic#1     @BE \opnormal{\mathnormal{#1}}
-DEF \opcursive#1    @BE \opitalic{\mathcal#1}
-DEF \oplinear#1     @BE \opnormal{\mathbb{#1}}
+CMD \opnormal   @LEN 1  @BE \operatorname{#1}
+CMD \opitalic   @LEN 1  @BE \opnormal{\mathnormal{#1}}
+CMD \opcursive  @LEN 1  @BE \opitalic{\mathcal#1}
+CMD \oplinear   @LEN 1  @BE \opnormal{\mathbb{#1}}
 
 # linear groups
-DEF \GL     @BE \oplinear{GL}
-DEF \SL     @BE \oplinear{SL}
-DEF \SO     @BE \oplinear{SO}
-DEF \SU     @BE \oplinear{SU}
-DEF \PGL    @BE \oplinear{PGL}
-DEF \PSL    @BE \oplinear{PSL}
-DEF \U      @BE \oplinear{U}
+CMD \GL     @BE \oplinear{GL}
+CMD \SL     @BE \oplinear{SL}
+CMD \SO     @BE \oplinear{SO}
+CMD \SU     @BE \oplinear{SU}
+CMD \PGL    @BE \oplinear{PGL}
+CMD \PSL    @BE \oplinear{PSL}
+CMD \U      @BE \oplinear{U}
 
 # operators
-DEF \adj    @BE \opnormal{adj}
-DEF \Alt    @BE \opcursive{Alt}
-DEF \Aut    @BE \opcursive{Aut}
-DEF \Ann    @BE \opcursive{Ann}
-DEF \Br     @BE \opcursive{Br}
-DEF \Char   @BE \opnormal{char}
-DEF \Cl     @BE \opcursive{Cl}
-DEF \Cor    @BE \opcursive{Cor}
-DEF \coim   @BE \opnormal{coim}
-DEF \coker  @BE \opnormal{coker}
-DEF \diag   @BE \opnormal{diag}
-DEF \diam   @BE \opnormal{diam}
-DEF \Div    @BE \opcursive{Div}
-DEF \End    @BE \opcursive{End}
-DEF \Ext    @BE \opcursive{Ext}
-DEF \Frac   @BE \opcursive{Frac}
-DEF \Gal    @BE \opcursive{Gal}
-DEF \Hom    @BE \opcursive{Hom}
-DEF \id     @BE \opnormal{id}
-DEF \im     @BE \opnormal{im}
-DEF \inv    @BE \opnormal{inv}
-DEF \Im     @BE \opnormal{Im}
-DEF \Inf    @BE \opcursive{Inf}
-DEF \Irr    @BE \opcursive{Irr}
-DEF \Mor    @BE \opcursive{Mor}
-DEF \Nm     @BE \opcursive{N}
-DEF \ord    @BE \opnormal{ord}
-DEF \Orb    @BE \opcursive{Orb}
-DEF \rad    @BE \opnormal{rad}
-DEF \rank   @BE \opnormal{rank}
-DEF \Re     @BE \opnormal{Re}
-DEF \Res    @BE \opcursive{Res}
-DEF \Stab   @BE \opcursive{Stab}
-DEF \Spec   @BE \opcursive{Spec}
-DEF \Sym    @BE \opcursive{Sym}
-DEF \sign   @BE \opnormal{sign}
-DEF \Tr     @BE \opcursive{Tr}
-DEF \Tor    @BE \opcursive{Tor}
-DEF \vol    @BE \opnormal{vol}
+CMD \adj    @BE \opnormal{adj}
+CMD \Alt    @BE \opcursive{Alt}
+CMD \Aut    @BE \opcursive{Aut}
+CMD \Ann    @BE \opcursive{Ann}
+CMD \Br     @BE \opcursive{Br}
+CMD \Char   @BE \opnormal{char}
+CMD \Cl     @BE \opcursive{Cl}
+CMD \Cor    @BE \opcursive{Cor}
+CMD \coim   @BE \opnormal{coim}
+CMD \coker  @BE \opnormal{coker}
+CMD \diag   @BE \opnormal{diag}
+CMD \diam   @BE \opnormal{diam}
+CMD \Div    @BE \opcursive{Div}
+CMD \End    @BE \opcursive{End}
+CMD \Ext    @BE \opcursive{Ext}
+CMD \Frac   @BE \opcursive{Frac}
+CMD \Gal    @BE \opcursive{Gal}
+CMD \Hom    @BE \opcursive{Hom}
+CMD \id     @BE \opnormal{id}
+CMD \im     @BE \opnormal{im}
+CMD \inv    @BE \opnormal{inv}
+CMD \Im     @BE \opnormal{Im}
+CMD \Inf    @BE \opcursive{Inf}
+CMD \Irr    @BE \opcursive{Irr}
+CMD \Mor    @BE \opcursive{Mor}
+CMD \Nm     @BE \opcursive{N}
+CMD \ord    @BE \opnormal{ord}
+CMD \Orb    @BE \opcursive{Orb}
+CMD \rad    @BE \opnormal{rad}
+CMD \rank   @BE \opnormal{rank}
+CMD \Re     @BE \opnormal{Re}
+CMD \Res    @BE \opcursive{Res}
+CMD \Stab   @BE \opcursive{Stab}
+CMD \Spec   @BE \opcursive{Spec}
+CMD \Sym    @BE \opcursive{Sym}
+CMD \sign   @BE \opnormal{sign}
+CMD \Tr     @BE \opcursive{Tr}
+CMD \Tor    @BE \opcursive{Tor}
+CMD \vol    @BE \opnormal{vol}
 
 # environments
 CTR counter@thms
-CMD \SetTheoremNumberingPrefix  @BE %make_counter_under('counter@thms', '#1')%  @LEN 1
+CMD \SetTheoremNumberingPrefix  @LEN 1  @BE %make_counter_under('counter@thms', '#1')%
 THM proposition     @BE %upperlower('Proposition')%     @COUNTER counter@thms   @STYLE plain
 THM theorem         @BE %upperlower('Theorem')%         @COUNTER counter@thms   @STYLE plain
 THM lemma           @BE %upperlower('Lemma')%           @COUNTER counter@thms   @STYLE plain
@@ -117,3 +117,16 @@ cref('example', 'Example')
 cref('exercise', 'Exercise')
 ?>
 
+# contents
+DEF \contentsname   @BE \emph{\textbf{Contents}}
+CMD \makecontents   @BE \thispagestyle{empty}\setcounter{page}{1}\tableofcontents\newpage\setcounter{page}{1}
+
+# format of head and foot
+CMD \MakeFancyHeadFoot  @BE \usepackage{fancyhdr}\pagestyle{fancy}\fancyhf{}\fancyhead[LO]{\rightmark}\fancyhead[RE]{\leftmark}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0.4pt}\renewcommand{\footrulewidth}{0.4pt}
+
+# options
+OPT section @BE \SetTheoremNumberingPrefix{\thesection}
+OPT chapter @BE \SetTheoremNumberingPrefix{\thechapter}
+OPT both    @BE \SetTheoremNumberingPrefix{\thechapter.\thesection}
+OPT fancy   @BE \MakeFancyHeadFoot
+OPT @PROCESS
