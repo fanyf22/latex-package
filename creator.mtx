@@ -102,8 +102,8 @@ THM remark          @BE %upperlower('Remark')%          @COUNTER counter@thms   
 THM example         @BE %upperlower('Example')%         @COUNTER counter@thms   @STYLE definition
 THM exercise        @BE %upperlower('Exercise')%        @COUNTER counter@thms   @STYLE plain
 THM notation        @BE %upperlower('Notation')%        @WITHOUT_COUNTER
-THM problem     @BE %upperlower('Problem')%     @STYLE plain
-THM answer      @BE %upperlower('Answer')%      @STYLE definition
+THM problem         @BE %upperlower('Problem')%         @STYLE plain
+THM answer          @BE %upperlower('Answer')%          @STYLE definition
 <?python
 def cref(x, y):
     echo(r'\crefname{{{0}}}{{{1}}}{{{1}}}'.format(x, upperlower(y)))
