@@ -130,5 +130,5 @@ OPT section @BE \SetTheoremNumberingPrefix{\thesection}
 OPT chapter @BE \SetTheoremNumberingPrefix{\thechapter}
 OPT both    @BE \SetTheoremNumberingPrefix{\thechapter.\thesection}
 OPT fancy   @BE \AtEndOfPackage{\MakeFancyHeadFoot}
-OPT times   @BE \AtEndOfPackage{\RequirePackage{mathptmx}}
+OPT times   @BE \AtEndOfPackage{\RequirePackage{times}}
 OPT @PROCESS
