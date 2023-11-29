@@ -78,6 +78,7 @@ CMD \Mor    @BE \opcursive{Mor}
 CMD \Nm     @BE \opcursive{N}
 CMD \ord    @BE \opnormal{ord}
 CMD \Orb    @BE \opcursive{Orb}
+CMD \Proj   @BE \opcursive{Proj}
 CMD \rad    @BE \opnormal{rad}
 CMD \rank   @BE \opnormal{rank}
 CMD \Re     @BE \opnormal{Re}       @RE
