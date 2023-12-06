@@ -119,6 +119,9 @@ cref('exercise', 'Exercise')
 cref('equation', '')
 ?>
 
+# cover
+CMD \SetCoverInfo   @LEN 3  @BE \title{#3}\author{#2}\date{#1}  @DEFAULT \today
+
 # contents
 DEF \contentsname   @BE \emph{\textbf{Contents}}
 CMD \makecontents   @BE \thispagestyle{empty}\setcounter{page}{1}\tableofcontents\newpage\setcounter{page}{1}
