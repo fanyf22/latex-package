@@ -20,6 +20,7 @@ DEF \arraystretch   @BE 0.6
 CMD \what   @LEN 1  @BE \widehat{#1}
 CMD \dhat   @LEN 1  @BE \widehat{\widehat{#1}}
 CMD \pprod          @BE \sideset{}{^\prime}\prod
+CMD \double @LEN 1  @BE #1\!#1
 DEF \dis$#1$        @BE $\displaystyle{#1}$
 RAW \DeclareMathOperator{\hatoplus}{\hat\oplus}
 
@@ -94,12 +95,14 @@ CMD \vol    @BE \opnormal{vol}
 # environments
 CTR counter@thms
 CMD \SetTheoremNumberingPrefix  @LEN 1  @BE %make_counter_under('counter@thms', '#1')%
+CMD \SetTheoremCountingUnder    @LEN 1  @BE \counterwithin{counter@thms}{#1}
 THM proposition     @BE %upperlower('Proposition')%     @COUNTER counter@thms   @STYLE plain
 THM theorem         @BE %upperlower('Theorem')%         @COUNTER counter@thms   @STYLE plain
-THM lemma           @BE %upperlower('Lemma')%           @COUNTER counter@thms   @STYLE plain
+THM lemma           @BE %upperlower('Lemma')%           @COUNTER counter@thms   @STYLE plain`
 THM corollary       @BE %upperlower('Corollary')%       @COUNTER counter@thms   @STYLE plain
 THM definition      @BE %upperlower('Definition')%      @COUNTER counter@thms   @STYLE definition
 THM remark          @BE %upperlower('Remark')%          @COUNTER counter@thms   @STYLE definition
+THM analysis        @BE %upperlower('Analysis')%        @COUNTER counter@thms   @STYLE plain
 THM example         @BE %upperlower('Example')%         @COUNTER counter@thms   @STYLE definition
 THM exercise        @BE %upperlower('Exercise')%        @COUNTER counter@thms   @STYLE plain
 THM notation        @BE %upperlower('Notation')%        @WITHOUT_COUNTER
@@ -114,13 +117,14 @@ cref('lemma', 'Lemma')
 cref('corollary', 'Corollary')
 cref('definition', 'Definition')
 cref('remark', 'Remark')
+cref('analysis', 'Analysis')
 cref('example', 'Example')
 cref('exercise', 'Exercise')
 cref('equation', '')
 ?>
 
 # cover
-CMD \SetCoverInfo   @LEN 3  @BE \title{#3}\author{#2}\date{#1}  @DEFAULT \today
+CMD \SetCoverInfo   @LEN 3  @BE \title{\emph{\textbf{#3}}}\author{\emph{#2}}\date{#1}   @DEFAULT \today
 
 # contents
 DEF \contentsname   @BE \emph{\textbf{Contents}}
@@ -129,10 +133,16 @@ CMD \makecontents   @BE \thispagestyle{empty}\setcounter{page}{1}\tableofcontent
 # format of head and foot
 CMD \MakeFancyHeadFoot  @BE \RequirePackage{fancyhdr}\pagestyle{fancy}\fancyhf{}\fancyhead[LO]{\rightmark}\fancyhead[RE]{\leftmark}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0.4pt}\renewcommand{\footrulewidth}{0.4pt}
 
+# section and chapter and part
+<?python
+for title in ["section", "chapter", "part"]:
+    echo(r"\newcommand{\%se}[1]{\%s{\emph{#1}}}" % (title, title))
+?>
+
 # options
-OPT section @BE \SetTheoremNumberingPrefix{\thesection}
-OPT chapter @BE \SetTheoremNumberingPrefix{\thechapter}
-OPT both    @BE \SetTheoremNumberingPrefix{\thechapter.\thesection}
+OPT section @BE \SetTheoremCountingUnder{section}\SetTheoremNumberingPrefix{\thesection}
+OPT chapter @BE \SetTheoremCountingUnder{chapter}\SetTheoremNumberingPrefix{\thechapter}
+OPT both    @BE \SetTheoremCountingUnder{chapter}\SetTheoremNumberingPrefix{\thechapter.\thesection}
 OPT fancy   @BE \AtEndOfPackage{\MakeFancyHeadFoot}
 OPT times   @BE \AtEndOfPackage{\RequirePackage{times}}
 OPT @PROCESS
