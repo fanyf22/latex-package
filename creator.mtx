@@ -52,6 +52,7 @@ CMD \PSL    @BE \oplinear{PSL}
 # operators
 CMD \adj    @BE \opnormal{adj}
 CMD \Alt    @BE \opcursive{Alt}
+CMD \Art    @BE \opcursive{Art}
 CMD \Aut    @BE \opcursive{Aut}
 CMD \Ann    @BE \opcursive{Ann}
 CMD \Br     @BE \opcursive{Br}
