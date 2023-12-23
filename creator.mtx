@@ -104,7 +104,7 @@ THM corollary       @BE %upperlower('Corollary')%       @COUNTER counter@thms   
 THM definition      @BE %upperlower('Definition')%      @COUNTER counter@thms   @STYLE definition
 THM remark          @BE %upperlower('Remark')%          @COUNTER counter@thms   @STYLE definition
 THM analysis        @BE %upperlower('Analysis')%        @COUNTER counter@thms   @STYLE plain
-THM example         @BE %upperlower('Example')%         @COUNTER counter@thms   @STYLE definition
+THM example         @BE %upperlower('Example')%         @COUNTER counter@thms   @STYLE plain
 THM exercise        @BE %upperlower('Exercise')%        @COUNTER counter@thms   @STYLE plain
 THM notation        @BE %upperlower('Notation')%        @WITHOUT_COUNTER
 THM problem         @BE %upperlower('Problem')%         @STYLE plain
