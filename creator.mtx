@@ -99,7 +99,7 @@ CMD \SetTheoremNumberingPrefix  @LEN 1  @BE %make_counter_under('counter@thms', 
 CMD \SetTheoremCountingUnder    @LEN 1  @BE \counterwithin{counter@thms}{#1}
 THM proposition     @BE %upperlower('Proposition')%     @COUNTER counter@thms   @STYLE plain
 THM theorem         @BE %upperlower('Theorem')%         @COUNTER counter@thms   @STYLE plain
-THM lemma           @BE %upperlower('Lemma')%           @COUNTER counter@thms   @STYLE plain`
+THM lemma           @BE %upperlower('Lemma')%           @COUNTER counter@thms   @STYLE plain
 THM corollary       @BE %upperlower('Corollary')%       @COUNTER counter@thms   @STYLE plain
 THM definition      @BE %upperlower('Definition')%      @COUNTER counter@thms   @STYLE definition
 THM remark          @BE %upperlower('Remark')%          @COUNTER counter@thms   @STYLE definition
